@@ -1,7 +1,7 @@
 ### Docker installation steps in Ubuntu ###
 sudo apt update
 # Install Prerequisites:
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 # Add Docker's official GPG key to verify the integrity of the packages.
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 # Add the Docker stable repository to your system.
