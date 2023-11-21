@@ -7,8 +7,8 @@ tar -zxvf apache-maven-3.9.5-bin.tar.gz
 sudo mv apache-maven-3.9.5 /opt
 ### Create Symbolic Link:
 # Create a symbolic link to the Maven installation directory. This is optional but can be useful for easily switching between different Maven versions in the future:
-sudo ln -s /opt/apache-maven-3.8.4 /opt/maven
-export MAVEN_HOME=/opt/apache-maven-3.8.4
+sudo ln -s /opt/apache-maven-3.9.5 /opt/maven
+export MAVEN_HOME=/opt/apache-maven-3.9.5
 export PATH=$PATH:$MAVEN_HOME/bin
 
 mvn -version
