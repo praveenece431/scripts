@@ -16,7 +16,7 @@ image="Canonical:UbuntuServer:18.04-DAILY-LTS:18.04.202306070"
 
 # Username and Password for SSH access
 adminUsername="azureuser"
-adminPassword="AzureAdmin1234"
+adminPassword="YOUR_PASSWORD"
 
 # Resource Group Creation
 az group create --name $resourceGroup --location $location
