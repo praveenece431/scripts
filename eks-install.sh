@@ -5,7 +5,7 @@ GREEN="\033[32m"
 BLUE="\033[34m"
 NC="\033[37m"
 
-echo "${GREEN} *** Script to install EKS. Prerequisite is to have the aws credentils do authenticate with CLi by doing aws configure *** ${NC}"
+echo -e "${GREEN} *** Script to install EKS. Prerequisite is to have the aws credentils do authenticate with CLi by doing aws configure *** ${NC}"
 
 echo -e "${GREEN}*** Install AWS CLI V2 *** ${NC}"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
