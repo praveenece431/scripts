@@ -1,8 +1,13 @@
 #! /bin/bash
 
-echo "*** Script to install EKS. Prerequisite is to have the aws credentils do authenticate with CLi by doing aws configure ***"
+RED="\033[31m"
+GREEN="\033[32m"
+BLUE="\033[34m"
+NC="\033[37m"
 
-echo "*** Install AWS CLI V2 ***"
+echo "${GREEN} *** Script to install EKS. Prerequisite is to have the aws credentils do authenticate with CLi by doing aws configure *** ${NC}"
+
+echo -e "${GREEN}*** Install AWS CLI V2 *** ${NC}"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install --bin-dir /usr/bin --install-dir /usr/bin/aws-cli --update
