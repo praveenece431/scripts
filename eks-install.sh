@@ -9,6 +9,7 @@ echo -e "${GREEN} *** Script to install EKS. Prerequisite is to have the aws cre
 
 echo -e "${GREEN}*** Install AWS CLI V2 *** ${NC}"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo apt install -y unzip
 unzip awscliv2.zip
 sudo ./aws/install --bin-dir /usr/bin --install-dir /usr/bin/aws-cli --update
 echo "*** Check the aws cli version ***"
@@ -16,11 +17,13 @@ aws --version
 
 echo "*** Install KUBECTL CLI ***"
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+sudo mv kubectl /usr/bin/
 #curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.8/2020-04-16/bin/linux/amd64/kubectl
 #chmod +x ./kubectl
 #mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
 echo "*** Check KUBECTL Version ***"
-kubectl version --short --client
+kubectl version
 
 echo "*** Download EKSCTL ***"
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
