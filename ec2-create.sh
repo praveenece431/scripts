@@ -8,6 +8,8 @@ secretID=$2
 export AWS_ACCESS_KEY_ID=$keyID
 export AWS_SECRET_ACCESS_KEY=$secretID
 export AWS_DEFAULT_REGION=us-east-1
+KEY=$(aws ec2 describe-key-pairs --query 'KeyPairs[*].[KeyName]' --output text) || true
+aws ec2 delete-key-pair --key-name $KEY || true
 aws ec2 create-key-pair --key-name aws-login --query 'KeyMaterial' --output text > aws-login.pem
 chmod 400 aws-login.pem
 VPC_ID=$(aws ec2 describe-vpcs --filters "Name=isDefault, Values=true" --query 'Vpcs[0].VpcId' --output text)
