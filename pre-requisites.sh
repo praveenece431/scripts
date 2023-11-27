@@ -16,6 +16,12 @@ az-cli-ubuntu() {
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 }
 
+aws-cli-install() {
+sudo apt update
+sudo apt install -y awscli
+aws --version
+}
+
 kubectl-ubuntu() {
 sudo apt install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
