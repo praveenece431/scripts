@@ -14,7 +14,7 @@ aws ec2 create-key-pair --key-name aws-login --query 'KeyMaterial' --output text
 chmod 400 aws-login.pem
 VPC_ID=$(aws ec2 describe-vpcs --filters "Name=isDefault, Values=true" --query 'Vpcs[0].VpcId' --output text)
 SUB_ID=$(aws ec2 describe-subnets --filters "Name=vpc-id, Values=$VPC_ID" --query 'Subnets[0].SubnetId' --output text)
-aws ec2 run-instances --image-id ami-06aa3f7caf3a30282 --count 1 --instance-type t2.medium --key-name aws-login --subnet-id "$SUB_ID"
+aws ec2 run-instances --image-id ami-06aa3f7caf3a30282 --count 1 --instance-type t2.medium --key-name aws-login --subnet-id "$SUB_ID" --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=POC}]'
 }
 
 ec2-create $1 $2
