@@ -1,5 +1,14 @@
 #!/bin/bash
 
+usage() {
+  echo "Usage: $0 keyID secretID"
+    exit 1
+ }
+
+if [ $# -ne 2 ]; then
+  usage
+fi
+
 ec2-create() {
 echo "*** This will create one EC2 instance. ****"
 sleep 3
