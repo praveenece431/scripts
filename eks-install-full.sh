@@ -7,6 +7,7 @@ usage() {
 
 if [ $# -ne 2 ]; then
 usage
+fi
 
 eks-install() {
 echo "*** Provisioning eks cluster *****"
