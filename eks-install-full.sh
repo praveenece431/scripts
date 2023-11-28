@@ -23,7 +23,7 @@ export AWS_ACCESS_KEY_ID="$keyId"
 export AWS_SECRET_ACCESS_KEY="$secretKey"
 export AWS_DEFAULT_REGION=us-east-1
 sudo apt  install docker.io -y
-curl -LO https://dl.k8s.io/release/v1.26.0/bin/linux/amd64/kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x ./kubectl
 sudo mkdir -p $HOME/bin && sudo cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
 kubectl version --short --client
