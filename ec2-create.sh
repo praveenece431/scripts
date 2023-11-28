@@ -17,6 +17,8 @@ secretID=$2
 export AWS_ACCESS_KEY_ID=$keyID
 export AWS_SECRET_ACCESS_KEY=$secretID
 export AWS_DEFAULT_REGION=us-east-1
+echo "*** Deleting the previous PEM key file in local ***"
+rm -f aws-login.pem
 KEY=$(aws ec2 describe-key-pairs --query 'KeyPairs[*].[KeyName]' --output text) || true
 aws ec2 delete-key-pair --key-name $KEY || true
 aws ec2 create-key-pair --key-name aws-login --query 'KeyMaterial' --output text > aws-login.pem
