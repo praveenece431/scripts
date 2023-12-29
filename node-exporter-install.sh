@@ -16,6 +16,9 @@ node_exporter --help
 
 # Follow this manually
 echo 'sudo vim /etc/systemd/system/node_exporter.service'
+sudo systemctl enable node_exporter
+sudo systemctl start node_exporter
+
 ## Refer below link for config:
 #https://mrcloudbook.hashnode.dev/devsecops-netflix-clone-ci-cd-with-monitoring-email
 echo 'Refer: https://mrcloudbook.hashnode.dev/devsecops-netflix-clone-ci-cd-with-monitoring-email'
