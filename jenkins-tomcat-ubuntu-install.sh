@@ -9,7 +9,7 @@ mv apache-tomcat-9.0.87 tomcat
 echo 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64' >> ~/.bashrc
 source ~/.bashrc
 sudo mv jenkins.war tomcat/webapps/
-./tomcat/bin/startup.sh
+sudo ./tomcat/bin/startup.sh
 echo "############################################################"
 echo "############  Access Jenkins from the url   ################"
 echo "############ http://<IP address>:8080/jenkins ##############"
