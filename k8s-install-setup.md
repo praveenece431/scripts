@@ -5,10 +5,6 @@
 1. Ubuntu instance with 4 GB RAM - Master Node - (with ports open to all traffic)
 2. Ubuntu instance with at least 2 GB RAM - Worker Node - (with ports open to all traffic)
 
-
-#int_IP=$(ip r l | head -1 | cut -d' ' -f9)
-#sudo hostnamectl set-hostname control-plane
-#echo "$int_IP control-plane" | sudo tee -a /etc/hosts
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
 overlay
 br_netfilter
