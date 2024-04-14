@@ -15,7 +15,9 @@ deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 
 sudo apt-get update
+
 #Disable swap memory for better performance
+
 swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 modprobe br_netfilter
