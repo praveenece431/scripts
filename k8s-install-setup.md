@@ -1,16 +1,14 @@
-# Kubernetes Setup Guide
 
-## Prerequisites
+
+#Prerequisites:
 
 1. Ubuntu instance with 4 GB RAM - Master Node - (with ports open to all traffic)
 2. Ubuntu instance with at least 2 GB RAM - Worker Node - (with ports open to all traffic)
 
-## Installation Steps
 
-```bash
-int_IP=$(ip r l | head -1 | cut -d' ' -f9)
-sudo hostnamectl set-hostname control-plane
-echo "$int_IP control-plane" | sudo tee -a /etc/hosts
+#int_IP=$(ip r l | head -1 | cut -d' ' -f9)
+#sudo hostnamectl set-hostname control-plane
+#echo "$int_IP control-plane" | sudo tee -a /etc/hosts
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
 overlay
 br_netfilter
@@ -82,11 +80,13 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 sudo kubeadm join 10.0.0.4:6443 --token q093mt.3xjjh9kf9sbztx3o \
         --discovery-token-ca-cert-hash sha256:862cbf51f0824af210702502514a156d992fa87762f354a004a9bbbc06fed3c7
 
+
+
 # Verify the cluster is working
 kubectl get nodes
 
 # Install the Calico network add-on
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
 
-## Command to print the join command.
+## Command to print the join command.a
 kubeadm token create --print-join-command
