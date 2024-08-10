@@ -5,5 +5,5 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 sudo yum install docker-ce
 sudo systemctl start docker
 sudo systemctl enable docker
-sudo usermod -aG docker ec2-user
+sudo usermod -aG docker $USER
 sudo chmod 777 /var/run/docker.sock
